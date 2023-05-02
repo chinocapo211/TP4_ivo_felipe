@@ -8,4 +8,9 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult Index()
+    {
+        ViewBag.EquiposIndumentaria = equipos.ingresaIndumentaria();
+        return View();
+    }
 }
