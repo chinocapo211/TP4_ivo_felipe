@@ -1,6 +1,35 @@
 ﻿@{
     ViewData["Title"] = "Index";
 }
+<head>
+    
+</head>
+<body>
+    <header>
+        <div>
+            <h1 class = "title">TP 04 - Index</h1>
+            <p>Nuestro sitio para crear y mostrar indumentarias para equipos.</p><br>
+        </div>
+    </header>
+    <section>
+        <div>
+            <h3 class = "impo"></h3>
+            <a href='@Url.Action("SelectIndumentaria")'>Ingresar indumentaria</a>
+        </div>
+        <div>
+            <h3 class = "impo">Equipos cargados:</h3>
+            @foreach (string item in ViewBag.dicEquipos.Keys)
+            {
+                <h4>item</h4>
+                foreach (string foto in ViewBag.dicEquipos[item])
+                {
+            
+                }   
+            }
+        </div>
+    </section>
+    <footer>
+    <p>Made by Ivo y Chinocapo</p>
+    </footer>
+</body>
 
-<h1>TP XX - Index</h1>
-<button type="button" onclick=>Crear Indumentaria</button>
