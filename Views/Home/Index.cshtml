@@ -7,24 +7,24 @@
 <body>
     <header>
         <div>
-            <h1 class = "title">TP 04 - Index</h1>
-            <p>Nuestro sitio para crear y mostrar indumentarias para equipos.</p><br>
+            <h1 class = "centro">TP 04 - Index</h1>
+            <p class = "centro">Nuestro sitio para crear y mostrar indumentarias para equipos.</p><br>
         </div>
     </header>
     <section>
         <div>
-            <h3 class = "impo"></h3>
-            <a href='@Url.Action("SelectIndumentaria")'>Ingresar indumentaria</a>
+            <h3></h3>
+            <a class = "centro" href='@Url.Action("SelectIndumentaria")'>Ingresar indumentaria</a>
         </div>
         <div>
-            <h3 class = "impo">Equipos cargados:</h3>
+            <h3>Equipos cargados:</h3>
             @foreach (string item in ViewBag.dicEquipos.Keys)
             {
-                <h4>item</h4>
-                foreach (string foto in ViewBag.dicEquipos[item])
-                {
-            
-                }   
+                <h4>@item</h4>
+                <img src="/img/medias/@ViewBag.dicEquipos[item].Medias" alt="img media" height="100">
+                <img src="/img/pantalones/@ViewBag.dicEquipos[item].Pantalon" alt="img pantalon" height="100">
+                <img src="/img/remeras/@ViewBag.dicEquipos[item].Remera" alt="img remera" height="100">
+                <br>
             }
         </div>
     </section>

@@ -3,7 +3,7 @@
 </head>
 <body>
     <header>
-        <h1 class="title">Selecciona o crea indumentaria</h1>
+        <h1>Selecciona o crea indumentaria</h1>
         <a href='Index'>Volver al index</a>
     </header>
     <section>
@@ -13,9 +13,9 @@
                     <p>Equipos: </p>
                     @foreach (string item in ViewBag.ListaEquipos)
                     {
-                        <b>@item, </b>
+                        <b>@item</b>
                     }
-                    <input value="Equipo" type="number" required min=1 max=@ViewBag.ListaEquipos.Count>
+                    <input name="Equipo" type="number" required min=1 max=@ViewBag.ListaEquipos.Count>
                 </div>
                 <div>
                     <h1>Medias</h1> <br>
@@ -23,7 +23,7 @@
                     {
                         <img src="/img/medias/@item" alt="img media" height="100">
                     }
-                    <input value="Medias" type="number" required min=1 max=@ViewBag.ListaEquipos.Count>
+                    <input name="Medias" type="number" required min=1 max=@ViewBag.ListaEquipos.Count>
                 </div>
                 <div>
                     <h1>Pantalones</h1> <br>
@@ -31,7 +31,7 @@
                     {
                         <img src="/img/pantalones/@item" alt="img pantalones" height="100">
                     }
-                    <input value="Pantalon" type="number" required min=1 max=@ViewBag.ListaEquipos.Count>
+                    <input name="Pantalon" type="number" required min=1 max=@ViewBag.ListaEquipos.Count>
                 </div>
                 <div>
                     <h1>Remeras</h1> <br>
@@ -39,7 +39,7 @@
                     {
                         <img src="/img/remeras/@item" alt="img remera" height="100">
                     }
-                    <input value="Remera" type="number" required min=1 max=@ViewBag.ListaEquipos.Count>
+                    <input name="Remera" type="number" required min=1 max=@ViewBag.ListaEquipos.Count>
                 </div>
                 <input type="submit">
             </form>

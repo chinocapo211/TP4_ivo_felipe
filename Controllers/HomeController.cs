@@ -17,18 +17,14 @@ public class HomeController : Controller
         ViewBag.ListaRemeras = equipos.ListaRemeras;
         return View();
     }
-    public IActionResult GuardarIndumentaria(string Equipo, string Media, string Pantalon, string Remera)
+    public IActionResult GuardarIndumentaria(int Equipo, string Media, string Pantalon, string Remera)
     {
-        if(Equipo == string.Empty || Media == string.Empty || Pantalon == string.Empty || Remera == string.Empty)
-        {
-            ViewBag.Error = "m";
-            return View("SelectIndumentaria");
-        }
-        else
-        {
+            Media += ".png";
+            Pantalon += ".jpg";
+            Remera += ".jpg";
             indumentaria a = new indumentaria(Media,Pantalon,Remera);
-            equipos.EquiposIndumentaria.Add(Equipo,a);
+            equipos.ingresaIndumentaria(equipos.ListaEquipos[Equipo-1],a);
+            ViewBag.dicEquipos = equipos.EquiposIndumentaria;
             return View("Index");
-        }
     }
 }
