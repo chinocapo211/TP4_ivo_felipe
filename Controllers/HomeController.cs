@@ -17,12 +17,12 @@ public class HomeController : Controller
         ViewBag.ListaRemeras = equipos.ListaRemeras;
         return View();
     }
-    public IActionResult GuardarIndumentaria(int Equipo, string Media, string Pantalon, string Remera)
+    public IActionResult GuardarIndumentaria(int Equipo, string Medias, string Pantalon, string Remera)
     {
-            Media += ".png";
+            Medias += ".jpg";
             Pantalon += ".jpg";
             Remera += ".jpg";
-            indumentaria a = new indumentaria(Media,Pantalon,Remera);
+            indumentaria a = new indumentaria(Medias,Pantalon,Remera);
             equipos.ingresaIndumentaria(equipos.ListaEquipos[Equipo-1],a);
             ViewBag.dicEquipos = equipos.EquiposIndumentaria;
             return View("Index");
